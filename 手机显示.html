@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>phone</title>
+	<style>
+		@-webkit-keyframes yuan{
+			0%{transform:scale(0.2);}
+			95%{transform:scale(1.2);}
+			100%{transform:scale(1);}
+		}
+		@-webkit-keyframes phone{
+			0%{transform:scaleX(0);}
+			100%{transform:scale(1);}
+		}
+		@-webkit-keyframes head{
+			0%{margin-top:-30.5px;}
+			100%{margin-top:-2.5px;}
+		}
+		@-webkit-keyframes foot{
+			0%{top:20px;}
+			100%{top:5px;}
+		}
+		@-webkit-keyframes main{
+			0%{-webkit-transform:scaleX(0);-webkit-transform:scaleY(0);}
+			100%{-webkit-transform:scaleX(1);-webkit-transform:scaleY(1);}
+		}
+		@-webkit-keyframes light{
+			0%{background-position:-150px 0;}
+			100%{background-position:0 0;}
+		}
+		#wrap{height:500px;width:700px;background:#0C3CAA;margin:20px auto;overflow: hidden;}
+		#yuan{height:300px;width:300px;border-radius: 50%;background:#EBE238;margin:100px auto;overflow: hidden;-webkit-animation:1s yuan forwards;}
+		#yuan .phone{height:200px;width:125px;background:#161617;margin:50px auto;border-radius:20px;overflow: hidden; -webkit-animation:1s 1s phone forwards;position:relative;}
+
+		#yuan .phone .head{height:20px;top:15px;position:absolute;}
+		#yuan .phone .head .camera{height:15px;width:15px;border-radius:50%;background:#8F8787;display:block;margin-top:-30.5px;margin-left:15px;-webkit-animation:.5s 2s head forwards;}
+		#yuan .phone .head .sound{height:15px;width:60px;border-radius:10px;background:#8F8787;display:block;margin:-15px 45px;}
+		#yuan .phone .main{height:120px;width:100px;background:#696BD6;position:absolute;top:45px;left:12.5px;-webkit-transform:scaleX(0);-webkit-transform:scaleY(0);-webkit-animation:0.5s 2s main forwards;}
+		#yuan .phone .foot{height:30px;position:absolute;bottom:5px;}
+		#yuan .phone .foot .home{height:20px;width:20px;border-radius: 50%;background:#8F8787;position:absolute;left:52.5px;top:50px;display:block;-webkit-animation:.5s 2s foot forwards;}
+		#yuan .phone .light{height:100%;width:100%;background:-webkit-linear-gradient(-35deg,rgba(255,255,255,0.3) 0px,rgba(255,255,255,0.3)  100px,rgba(255,255,255,0) 100px) no-repeat;background-position:-150px 0;opacity:0.5;position:absolute;top:0;left:0;-webkit-animation:.5s 2s light forwards;}
+
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="yuan">
+			<div class="phone">
+
+				<div class="head">
+					<span class="camera"></span>
+					<span class="sound"></span>
+				</div>
+				
+				<div class="main"></div>
+				<div class="foot">
+					<span class="home"></span>
+				</div>
+				<div class="light"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

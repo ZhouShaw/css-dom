@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时钟</title>
+	<style>
+		@-webkit-keyframes yuan{
+			0%{transform:scale(0.2);}
+			
+			100%{transform:scale(1);}
+		}
+		@-webkit-keyframes clock{
+			0%{transform:scale(0.2);}
+			
+			100%{transform:scale(1);}
+		}
+		@-webkit-keyframes div{
+			0%{opacity:0;}
+			
+			100%{opacity:1;}
+		}
+
+		#wrap{height:500px;width:700px;background:#0C3CAA;margin:20px auto;overflow: hidden;}
+		#yuan{height:300px;width:300px;border-radius: 50%;background:#EBE238;margin:100px auto;overflow: hidden;-webkit-animation:1s yuan forwards;}
+		#clock{height:200px;width:200px;background:#E0DADA;margin:30px auto;border:20px solid #151515;border-radius:50%;-webkit-transform:scale(0.2);-webkit-animation:0.3s .3s clock forwards;position:relative;}
+		#clock div:nth-child(1){
+			height:30px;width:5px;background:#EA4949;
+			top:70px;left:97.5px;position:absolute;
+			-webkit-transform-origin:bottom;
+			opacity:0;
+			-webkit-animation:0.5s 1s div forwards;
+		}
+		#clock div:nth-child(2){
+			height:50px;width:3px;background:#EA4949;
+			top:50px;left:98.5px;position:absolute;
+			-webkit-transform-origin:bottom;
+			opacity:0;
+			-webkit-animation:0.5s 1s div forwards;
+		}
+		#clock div:nth-child(3){
+			height:70px;width:2px;background:#272525;
+			top:30px;left:99px;position:absolute;
+			-webkit-transform-origin:bottom;
+			/*transition:1s linear;*/
+			opacity:0;
+			-webkit-animation:0.5s 1s div forwards;
+		}
+		#clock div:nth-child(4){
+			height:10px;width:10px;background:#E0DADA;
+			border:2px solid #212020;border-radius: 50%;
+			top:94px;left:93px;position:absolute;
+		}				
+	
+	</style>
+	<script>
+		window.onload = function(){
+			var oClock = document.getElementById('clock');
+			var oHour = oClock.getElementsByTagName('div')[0];
+			var oMin = oClock.getElementsByTagName('div')[1];
+			var oSec = oClock.getElementsByTagName('div')[2];
+			var otimer = null
+			getTime();
+			otimer = setInterval(function(){
+				getTime();
+			},20);
+			
+			function getTime(){
+
+				var oDate = new Date();
+				var iHour = oDate.getHours();
+				var iMin = oDate.getMinutes();
+				var iSec = oDate.getSeconds();
+				var iMs = oDate.getMilliseconds();
+				
+				
+				oHour.style.WebkitTransform = 'rotate('+ (15*iHour +Math.round((iMin/60))+Math.round(iSec*1/3600))+'deg)';
+				oMin.style.WebkitTransform = 'rotate('+ (Math.round((iMin/60))+Math.round(iSec/60) ) +'deg)';
+				oSec.style.WebkitTransform = 'rotate('+ (iSec+iMs/1000)*6 +'deg)';
+
+				
+
+			}
+
+		};
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="yuan">
+			<div id="clock">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
