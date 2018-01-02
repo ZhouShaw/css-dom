@@ -1,12 +1,10 @@
-# css-dom
-简单好玩的css动画
+ **Some special and basic effects by CSS3**
 
-### 圆形切换
-<a href="http://zhoushaw.github.io/css-dom/四分之一圆.html">预览</a>
+* Carousel:
+<a href="http://zhoushaw.github.io/css3/四分之一圆.html">Preview</a>
 
+* phone:
+<a href="http://zhoushaw.github.io/css3手机显示.html">Preview</a>
 
-### 手机动画
-<a href="http://zhoushaw.github.io/css-dom/手机显示.html">预览</a>
-
-### 时钟动画
-<a href="http://zhoushaw.github.io/css-dom/时钟.html">预览</a>
+* clock:
+<a href="http://zhoushaw.github.io/css3/时钟.html">Preview</a>
